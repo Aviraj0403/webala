@@ -1,0 +1,10 @@
+@import "tailwindcss";
+/* In your main CSS file, e.g., index.css or App.css */
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Offset for fixed navbar */
+}
