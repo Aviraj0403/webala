@@ -108,7 +108,7 @@ const projects = [
 
 const Ourprojects = () => {
   return (
-    <section className="py-20 px-6 bg-white text-gray-900">
+    <section className="py-20 px-6 bg-white text-gray-900 font-playfair">
       {/* Heading */}
       <div className="max-w-4xl mx-auto text-center mb-12 px-4">
         <h2 className="text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] font-bold text-blue-800 font-playfair">

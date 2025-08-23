@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const ContactUs = () => {
   return (
-    <section className="bg-gradient-to-br from-white via-blue-50 to-white py-20 px-4 md:px-20 text-center">
+    <section className="bg-gradient-to-br from-white via-blue-50 to-white py-20 px-4 md:px-20 text-center font-playfair">
       <div className="max-w-5xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: -20 }}

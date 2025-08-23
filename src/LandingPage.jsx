@@ -13,6 +13,7 @@ import Ourprojects from "./Component/Ourprojects/Ourprojects";
 import ContactUs from "./Component/ContactUs/ContactUs";
 import Enquiry from "./Component/Enquiry/Enquiry";
 import OurMoto from "./Component/Ourmoto/Ourmoto";
+import PricingSection from "./Component/PricingSection/PricingSection";
 // import Developerskills from './Component/Developerskills/Developerskills'
 
 const LandingPage = () => {
@@ -95,6 +96,10 @@ const LandingPage = () => {
         <Servicesprovider />
       </section>
 
+      <section id="ourproject">
+        <Ourprojects />
+      </section>
+
       <section id="technology">
         <Technology />
       </section>
@@ -105,10 +110,6 @@ const LandingPage = () => {
 
       <Projectsidea />
 
-      <section id="ourproject">
-        <Ourprojects />
-      </section>
-
       <section id="aboutdeveloper">
         <Aboutdeveloper />
       </section>
@@ -118,6 +119,7 @@ const LandingPage = () => {
       <section id="contactus">
         <ContactUs />
       </section>
+      <PricingSection/>
 
       <Enquiry />
       

@@ -28,7 +28,7 @@ const Enquiry = () => {
   };
 
   return (
-    <section className="bg-blue-50 py-16 px-4">
+    <section className="bg-blue-50 py-16 px-4 font-playfair">
       <div className="max-w-3xl mx-auto text-center mb-10">
         <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-2">
           Enquiry Now

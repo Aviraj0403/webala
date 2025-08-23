@@ -4,24 +4,30 @@ import image1 from "../../assets/viru.jpg";
 import abhi from "../../assets/abhi.png";
 import abhi1 from "../../assets/abhi1.png";
 import sudh1 from "../../assets/sudh.jpg";
-import suraj from "../../assets/suraj.jpg";
+import suraj from "../../assets/deepak.jpeg";
 import ritik from "../../assets/ritik.jpg";
 const developers = [
   {
-    name: "Avi Raj Singh",
-    role: "Full Stack Developer",
-    image: abhi,
-    desc: "Expert in building full-fledged web applications with seamless integration between frontend and backend using the MERN stack.",
+    name: "Sudhanshu Kumar",
+    role: "Founder & Business Lead",
+    image: sudh1,
+    desc: "Leading Webala as Founder & Business Lead, with a focus on building strong client relationships, delivering innovative solutions, and scaling business growth.",
   },
   {
-    name: "Sudhanshu Kumar",
-    role: "Frontend Developer / UI/UX Designer",
-    image: sudh1,
-    desc: "Specializes in designing engaging, user-centric interfaces with a sharp eye for color, typography, and intuitive layouts.",
+    name: "Avi Raj Singh",
+    role: "Coo-Founder & Tech Lead",
+    image: abhi,
+    desc: "As Co-Founder & Tech Lead at Webala, he specializes in architecting modern web solutions, leading development teams, and turning ideas into powerful digital products.",
+  },
+  {
+    name: "Deepak Kumar Singh",
+    role: "CEO & Project Lead",
+    image: suraj,
+    desc: "Leading Webala as CEO & Project Lead, he transforms client goals into impactful digital solutions through strong leadership and efficient project management.",
   },
   {
     name: "Abhishek Pandey",
-    role: "Frontend Developer",
+    role: "Fullstack Developer & Team Lead",
     image: abhi1,
     desc: "Delivers fast, scalable, and accessible web apps using React, mastering component-driven development and performance tuning.",
   },
@@ -30,12 +36,6 @@ const developers = [
     role: "Influencer / Web Developer",
     image: image1,
     desc: "Combines social reach with technical expertise to promote, build, and review creative digital experiences and web tools.",
-  },
-  {
-    name: "Suraj Yadav",
-    role: "Frontend Developer",
-    image: suraj,
-    desc: "Creates elegant, high-performance UIs using React and Next.js, with a passion for animations, micro-interactions, and user delight.",
   },
   {
     name: "Hritik Thakur",
@@ -47,10 +47,10 @@ const developers = [
 
 const Aboutdevelopers = () => {
   return (
-    <section className="bg-gradient-to-br from-purple-50 to-indigo-100 py-12 px-3">
+    <section className="bg-gradient-to-br from-purple-50 to-indigo-100 py-12 px-3 font-playfair">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-extrabold text-center bg-gradient-to-r from-fuchsia-600 via-indigo-600 to-sky-600 bg-clip-text text-transparent font-['Playfair_Display'] mb-10">
-          Meet Our Team
+          Meet Our Webala Team
         </h2>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-5 sm:gap-8">

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, MessageCircle } from "lucide-react";
-import heroImage from "../../assets/software.png"; // Adjust path if needed
+import { ArrowRight } from "lucide-react";
+import Lottie from "lottie-react";
+import webDevAnimation from "../../assets/WebDev.json";
 
 const prompts = [
   "We are Webla",
@@ -21,37 +22,17 @@ const Herosection = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const handleChatbotClick = () => {
-    const phoneNumber = "917352205506"; // ✅ Replace with your WhatsApp number
-    const message = "Hello Webla team! I’d like to know more about your services.";
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
-  };
-
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-indigo-50 to-indigo-100 overflow-hidden px-6 pt-24 md:pt-0">
-      {/* Background Pattern */}
+      {/* Animated Background Pattern */}
       <motion.div
         className="absolute inset-0 z-0 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"
         animate={{ backgroundPositionY: ["0%", "100%"] }}
         transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
       />
 
-      {/* Floating Chatbot Button */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <motion.button
-          onClick={handleChatbotClick}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg transition-all duration-300"
-        >
-          <MessageCircle className="w-6 h-6" />
-        </motion.button>
-      </div>
-
-      {/* Hero Content */}
       <div className="relative z-10 max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-16">
-        {/* Text Section */}
+        {/* Left Section - Text */}
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -84,7 +65,7 @@ const Herosection = () => {
             No shortcuts. No templates. Just powerful execution.
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* Buttons */}
           <motion.div
             className="flex gap-4 flex-wrap"
             initial={{ opacity: 0, y: 20 }}
@@ -110,20 +91,28 @@ const Herosection = () => {
           </motion.div>
         </motion.div>
 
-        {/* Image Section */}
+        {/* Right Section - Lottie Animation */}
         <motion.div
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
           className="relative flex items-center justify-center"
         >
-          <motion.img
-            src={heroImage}
-            alt="Web development illustration"
-            className="w-full h-auto object-contain mt-6 md:mt-20 md:max-w-[80%] animate-bounce"
+          {/* Gradient Glow Background */}
+          <motion.div
+            className="absolute w-72 h-72 md:w-[26rem] md:h-[26rem] rounded-full bg-gradient-to-tr from-purple-400 via-indigo-500 to-blue-400 opacity-25 blur-[100px]"
+            animate={{ scale: [1, 1.1, 1] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          />
+
+          {/* Glassmorphism Container with Floating Animation */}
+          <motion.div
+            className="z-10 w-full max-w-md p-4 backdrop-blur-md rounded-2xl border border-white/20 bg-white/10 shadow-xl"
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          />
+          >
+            <Lottie animationData={webDevAnimation} loop={true} />
+          </motion.div>
         </motion.div>
       </div>
     </section>
