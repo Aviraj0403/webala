@@ -1,11 +1,10 @@
-// PortfolioNavbar.jsx
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import logo from "../../assets/webalalogo2.jpeg";
 
 // Unique nav links and colors
-const navLinks = ["Aboutdeveloper", "ourproject", "Technology", "Servicesprovider", "ServicesSection", "ContactUs"];
+const navLinks = ["About Developer", "Our Project", "Technology", "Services Provider", "Services Section", "Contact Us"];
 const linkColors = ["text-purple-500"];
 
 export default function PortfolioNavbar() {
@@ -19,6 +18,21 @@ export default function PortfolioNavbar() {
     document.head.appendChild(link);
   }, []);
 
+  // Handle mobile nav click to go to home
+  const handleLogoClick = () => {
+    window.location.href = "/";  // Redirect to homepage
+  };
+
+  // Smooth scrolling behavior
+  const handleNavLinkClick = (section) => {
+    // Smoothly scroll to the section
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsOpen(false); // Close mobile nav after selection
+  };
+
   return (
     <motion.nav
       className="bg-white shadow-md fixed w-full top-0 z-50"
@@ -30,6 +44,7 @@ export default function PortfolioNavbar() {
         {/* Logo */}
         <motion.a
           href="#"
+          onClick={handleLogoClick}
           className="flex items-center gap-4 group"
           whileHover={{ scale: 1.1 }}
         >
@@ -59,9 +74,10 @@ export default function PortfolioNavbar() {
           {navLinks.map((link, i) => (
             <motion.a
               key={i}
-              href={`#${link.toLowerCase()}`}
+              href={`#${link.toLowerCase().replace(" ", "")}`} // Normalize to match section IDs
               className={`hover:underline transition font-playfair ${linkColors[i % linkColors.length]}`}
               whileHover={{ scale: 1.1 }}
+              onClick={() => handleNavLinkClick(link.toLowerCase().replace(" ", ""))}
             >
               {link}
             </motion.a>
@@ -87,14 +103,14 @@ export default function PortfolioNavbar() {
           className="md:hidden bg-white px-6 pb-4 space-y-2"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }} 
+          transition={{ duration: 0.3 }}
         >
           {navLinks.map((link, i) => (
             <a
               key={i}
-              href={`#${link.toLowerCase()}`}
+              href={`#${link.toLowerCase().replace(" ", "")}`}
               className={`block transition font-playfair ${linkColors[i % linkColors.length]} hover:underline`}
-              onClick={() => setIsOpen(false)}
+              onClick={() => handleNavLinkClick(link.toLowerCase().replace(" ", ""))}
             >
               {link}
             </a>

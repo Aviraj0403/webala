@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   FaCode,
   FaSearch,
@@ -170,12 +171,17 @@ const Servicesprovider = () => {
                 {service.description}
               </p>
 
-              <motion.button
+                 <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
                 className="block mx-auto text-white bg-gradient-to-tr from-indigo-500 to-indigo-700 hover:from-indigo-600 hover:to-indigo-800 transition-all duration-300 px-5 py-2.5 rounded-full font-medium text-sm sm:text-base shadow-md hover:shadow-xl"
               >
-                {service.prompt}
+                {/* Here we wrap the button with Link to navigate to the detailed page */}
+                {service.title === "Website Development" ? (
+                  <Link to="/services/web-development">{service.prompt}</Link>
+                ) : (
+                  service.prompt
+                )}
               </motion.button>
             </motion.div>
           ))}

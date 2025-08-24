@@ -14,12 +14,14 @@ import ContactUs from "./Component/ContactUs/ContactUs";
 import Enquiry from "./Component/Enquiry/Enquiry";
 import OurMoto from "./Component/Ourmoto/Ourmoto";
 import LandingPage from "./LandingPage";
+import WebsiteDevelopmentPage from "./Component/servicesprovides/Service/WebsiteDevelopment";
 
 const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<LandingPage />}/>
       <Route path="#technology" element={<Technology/>}/>
+      <Route path="/services/web-development" element={<WebsiteDevelopmentPage/>}/>
       {/* <Route path="#servicesprovider" element={<Servicesprovider/>}/> */}
 
       
